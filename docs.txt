@@ -1,0 +1,5 @@
+https://go.dev/doc/?utm_source=chatgpt.com
+https://go.dev/doc/effective_go?utm_source=chatgpt.com
+https://go.dev/doc/tutorial/?utm_source=chatgpt.com
+https://go.dev/blog/declaration-syntax
+https://go.dev/tour/basics/4
