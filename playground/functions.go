@@ -43,12 +43,31 @@ func overwrite_data(n1, n2 *int) (x *int, y *int){
 	return &k, &v
 }
 
+func calculator(a, b int, operation rune) int {
+	add := func(n1, n2 int) int {return n1 + n2}
+	sub := func(n1, n2 int) int {return n1 - n2}
+	mult := func(n1, n2 int) int {return n1 * n2}
+	div := func(n1, n2 int) int {return n1 / n2}
+
+	if operation == '+' {
+		return add(a, b)
+	} else if operation == '-'{
+		return sub(a, b)
+	}else if operation == '*'{
+		return mult(a, b)
+	}else if operation == '/'{
+		return div(a, b)
+	}else {
+		return 0
+	}
+} 
+
 func main() {
 	///// 1 - function as a param :
 
 	//start_process("hello ", "ayoub", concat, 23, loading)
 
-	///// 1 - function multi returnes :
+	///// 2 - function multi returnes :
 
 	_, res2 := get_names("ayoub", "ali")
 	fmt.Println(res2)
@@ -62,4 +81,12 @@ func main() {
 	var x, y *int = overwrite_data(&e1, &e2)
 	fmt.Println(*x, *y)
 	fmt.Println(e1, e2)
+
+	///// 3 nested functions implementation 
+	fmt.Printf("calculator ready !\n")
+	fmt.Println("10 + 20", calculator(10, 20, '+'))
+	fmt.Println("10 - 20", calculator(10, 20, '-'))
+	fmt.Println("10 * 20", calculator(10, 20, '*'))
+	fmt.Println("10 / 20", calculator(10, 20, '/'))
+	fmt.Println("10 $ 20", calculator(10, 20, '$'))
 }

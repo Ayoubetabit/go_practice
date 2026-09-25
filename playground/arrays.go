@@ -1,13 +1,15 @@
 package main
 
-import ("fmt";"slices")
+import (
+	"fmt"
+	)
 
-func chang_arr(arr []int) *[]int {
-	arr[4] = 200
-	n_arr := []int{12, 30, 40}
-	up_arr := append(arr, n_arr...)
-	return &up_arr
-}
+// func chang_arr(arr []int) *[]int {
+// 	arr[4] = 200
+// 	n_arr := []int{12, 30, 40}
+// 	up_arr := append(arr, n_arr...)
+// 	return &up_arr
+// }
 
 
 func main(){
@@ -21,20 +23,33 @@ func main(){
 	// n1_arr := chang_arr(*n_arr)
 	// fmt.Printf("%v=> %p\n", *n1_arr, *n1_arr)
 
-	// 2 - check addresses
-	test_arr := []int{12, 13, 14, 15, 16}
-	fmt.Printf("%v=> %p\n", test_arr, test_arr)
-	test2_arr := slices.Clone(test_arr)
-	chang_arr(test_arr)
-	fmt.Printf("%v=> %p\n", test2_arr, test2_arr)
-	fmt.Printf("t1 again %v=> %p\n", test_arr, test_arr)
+	// // 2 - check addresses
+	// test_arr := []int{12, 13, 14, 15, 16}
+	// fmt.Printf("%v=> %p\n", test_arr, test_arr)
+	// test2_arr := slices.Clone(test_arr)
+	// chang_arr(test_arr)
+	// fmt.Printf("%v=> %p\n", test2_arr, test2_arr)
+	// fmt.Printf("t1 again %v=> %p\n", test_arr, test_arr)
 
-	// 1 - practice append
-	var new_arr [10]int
-	for i:=0; i < 10; i++{
-		new_arr[i] = i
+	// // 1 - practice append
+	// var new_arr [10]int
+	// for i:=0; i < 10; i++{
+	// 	new_arr[i] = i
+	// }
+	// fmt.Println(new_arr)
+
+	var arr = [5]string{}
+	arr2 := [...]int{23, 35, 65}
+	fmt.Print("start filling arr ...\n")
+	for i:=0; i < 3; i++{
+		arr[i] = fmt.Sprintf("user_%v", i + 1)
 	}
-	fmt.Println(new_arr)
+	for i:=0; i < 5; i++{
+		if arr[i] == ""{break}
+		fmt.Println(arr[i], "age is", arr2[i])
+	}
+
+
 }
 
 
