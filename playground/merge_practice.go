@@ -3,5 +3,5 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Learning Git merge")
+	fmt.Println("Ayoub is learning Git merge")
 }
